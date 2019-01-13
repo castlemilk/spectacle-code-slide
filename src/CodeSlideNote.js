@@ -14,7 +14,7 @@ const style = {
 class CodeSlideNote extends React.Component {
   render() {
     return (
-      <div style={style}>
+      <div style={{...style, ...this.props.style}}>
         {this.props.children}
       </div>
     );
