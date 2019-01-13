@@ -198,6 +198,7 @@ class CodeSlide extends React.Component {
     const newStyle = {
       ...style,
       color: color || style.color,
+      ...this.props.style
     };
 
     const lines = getHighlightedCodeLines(code, lang).map((line, index) => {
