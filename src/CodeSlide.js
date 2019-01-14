@@ -200,6 +200,11 @@ class CodeSlide extends React.Component {
       color: color || style.color,
       ...this.props.style
     };
+    const codeStyle = {
+      display: "inline-block",
+      textAlign: "left",
+      ...this.props.codeStyle
+    }
 
     const lines = getHighlightedCodeLines(code, lang).map((line, index) => {
       return <div
@@ -218,7 +223,7 @@ class CodeSlide extends React.Component {
         {range.title && <CodeSlideTitle style={titleStyle}>{range.title}</CodeSlideTitle>}
 
         <pre ref="container" style={newStyle}>
-          <code style={{ display: "inline-block", textAlign: "left" }}>{lines}</code>
+          <code style={codeStyle}>{lines}</code>
         </pre>
 
         {range.note && <CodeSlideNote style={noteStyle}>{range.note}</CodeSlideNote>}
